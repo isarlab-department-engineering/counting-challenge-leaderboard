@@ -25,6 +25,10 @@ import leaderboard as lb  # noqa: E402  (after the secrets)
 
 APP_DIR = Path(__file__).parent
 EXAMPLES_IMAGE = APP_DIR / "assets" / "examples.jpg"
+DATASET_URL = os.environ.get(
+    "DATASET_URL",
+    "https://unipg-my.sharepoint.com/:u:/g/personal/alberto_dionigi_unipg_it/"
+    "IQD_OsjIcN88RZ87OBJ9nRnRAZBsfOoM8-OntKEQzFSdB1E?e=6iLbnx")
 COURSE = "Deep Learning and Robot Perception (Laboratory) · University of Perugia"
 
 
@@ -142,6 +146,9 @@ the total count of objects. The objects are **cubes, cylinders, cones and sphere
 counts once, whatever its class.
 
 ## 🗂️ The dataset
+[**Download the dataset**]({DATASET_URL}) (ZIP, 4.2 GB): `train/`, `val/`, `test/images/` and the PyTorch loader
+`counting_dataset.py`.
+
 Synthetic images rendered with **Unreal Engine 5**. Every image is a new random scene (*domain randomization*):
 number, class, position, size and orientation of the objects, **39 materials** on objects and floor, sun, sky and
 camera all change from image to image. The class of an object is its **shape**, not its material.
@@ -231,6 +238,7 @@ with tab_submit:
             st.markdown("#### 📋 Rules\n" + "\n".join(f"- {rule}" for rule in rules))
 
 with tab_info:
+    st.link_button("⬇ Download the dataset (ZIP, 4.2 GB)", DATASET_URL, type="primary")
     if EXAMPLES_IMAGE.exists():
         st.image(str(EXAMPLES_IMAGE), width="stretch",
                  caption="Four validation images and their counts")
