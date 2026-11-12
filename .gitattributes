@@ -1,0 +1,15 @@
+# Text files always with LF line endings, in the repository and in the working copy (also on Windows)
+* text=auto eol=lf
+
+*.py    text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.toml  text eol=lf
+*.example text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+
+# Binary files: never converted
+*.jpg  binary
+*.jpeg binary
+*.png  binary

@@ -1,0 +1,5 @@
+[theme]
+primaryColor = "#27348B"
+
+[server]
+maxUploadSize = 10   # MB: a submission is ~30 KB

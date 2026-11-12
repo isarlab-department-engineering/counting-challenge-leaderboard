@@ -1,0 +1,8 @@
+# never in the repository: the ground truth, the submissions and the secrets
+local_data/
+.streamlit/secrets.toml
+ground_truth.csv
+submissions.csv
+teams.json
+submissions/
+__pycache__/
